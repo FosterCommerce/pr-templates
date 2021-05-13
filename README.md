@@ -14,7 +14,7 @@ See
 
 We currently use two templates:
 
-1. The base PR template will always show up. It includes a link to the deploy template, a place to document what the PR does, a place for extra notes, and a checklist for merging into staging.
+1. The base PR template will always show up. It includes a link to the deploy template, a place to document what the PR does, a place for extra notes, and some resource links.
 2. The deploy PR template is accessed through a custom link (see below). It includes a place to note all the previous PRs it includes, as well as a checklist for deploying to production.
 
 ### Add to your project
