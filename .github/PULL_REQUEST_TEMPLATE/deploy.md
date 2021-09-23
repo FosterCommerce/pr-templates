@@ -1,27 +1,39 @@
-Note: Update the date in the PR title, then delete this line.
+*Note: Update the date in the PR title, then delete this line.*
 
 ## PRs contained in this merge
 
-- {link}: description
+- #000: description
 
 ## Notes
+- Are there changes needed to environment variables and/or content on production?
 
 ---
 # Deployment Checklist
 
 ## Prepare for deploy
-- [ ] Check staging one more time.
-- [ ] Run end to end tests on the staging site.
-- [ ] Make sure it's an okay time to interrupt production (ping the client - are they editing? Did they just send a marketing email?)
-- [ ] [Back up the production database]({@TODO: link to the db-backup utility for production or instructions for backing up}) and make sure you know how to restore (just in case).
-- [ ] Make sure you can log into [the appropriate Forge account]({@TODO; link to production site forge page}), in case you need to troubleshoot.
+- [ ] The [staging site] () looks good.
+- [ ] All tests are passing on staging.
+    - Look in the logs in the [Actions tab] (). Did any tests fail? [Follow the flowchart](https://miro.com/app/board/o9J_lSEaAM0=/).
+- [ ] It's an okay time to interrupt production (the client or PM said it's okay).
+- [ ] The production DB is backed up and I know how to restore it.
 
 ## Merge the PR
 
-- [ ] Merge the PR. Forge will deploy the main branch to the production site.
+- [ ] The PR has been merged. 
+    - [GitHub Actions] () will deploy the `main` branch to the production site and run integration tests.
+    - [Forge] () will deploy the `main` branch to the production site.
 
 ## Quality control & closing
-- [ ] Check the production site to make sure the deployment worked and nothing is broken and the new features are working.
-- [ ] Run e2e tests on production.
-- [ ] Ideally take some screenshots.
-- [ ] Move task(s) to the "live on production" list in Basecamp. Assign to whoever is using QA in prod.
+- [ ] The deployment completed successfully.
+- [ ] All tests are passing or manually confirmed **on production**.
+    - Look in the logs in the [Actions tab] () and/or in the [Cypress Dashboard] (). Did any tests fail? [Follow the flowchart](https://miro.com/app/board/o9J_lSEaAM0=/).
+- [ ] The new features are working [on production] ().
+- [ ] I've added screenshots and/or links in comments for the deployed Basecamp tasks so PMs and clients can confirm the new features.
+- [ ] Relevant tasks are in the `Review on production` group in Basecamp and assigned to the PM.
+
+---
+
+## Resources
+- [Our approach to Cypress tests](https://www.notion.so/fostercommerce/Our-approach-to-Cypress-tests-d1361cf2bc5240fbb7bc35749f0f559b)
+- [QA Workflow](https://www.notion.so/fostercommerce/QA-Workflow-c2a1b045233c4e49bc2031d2c8f4a8f6)
+- [Dev & Deployment Workflow](https://www.notion.so/fostercommerce/Development-and-Deployment-Workflow-Foster-Commerce-301c48dc6e5b43ec9073b708846f7ae5)
